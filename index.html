@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b3d">
+  <meta name="description" content="Subris — техническая поддержка цифровых продуктов. Присоединяйтесь к команде менеджеров технической поддержки.">
+  <title>Subris — поддержка, которая работает</title>
+  <style>
+    :root{--navy:#071b3d;--blue:#087cf0;--cyan:#24d7e4;--ink:#13233d;--muted:#63718a;--paper:#f5f8fc;--line:#e3eaf3;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none} .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(227,234,243,.85)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:850;letter-spacing:-1px;color:#080d19}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:50%}
+    .links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:650;color:#43516a}
+    .links a:hover{color:var(--blue)} .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:12px;background:linear-gradient(115deg,#087cf0,#16bde2);color:#fff;font-weight:750;border:0;cursor:pointer;box-shadow:0 9px 24px rgba(8,124,240,.18);transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(8,124,240,.25)} .btn.outline{background:#fff;color:var(--navy);border:1px solid var(--line);box-shadow:none}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 12%,rgba(36,215,228,.18),transparent 32%),radial-gradient(ellipse at 5% 90%,rgba(8,124,240,.16),transparent 35%),var(--navy);color:#fff;padding:94px 0 88px}
+    .hero:after{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(255,255,255,.09);border-radius:50%;right:-120px;bottom:-260px;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.02)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:52px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#8deaf2;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.8px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+    h1{font-size:clamp(42px,5.5vw,68px);line-height:1.04;letter-spacing:-2.8px;margin:20px 0 22px;max-width:720px}
+    .gradient{background:linear-gradient(100deg,#fff 5%,#75eaf0 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{font-size:18px;color:#c3d1e7;max-width:610px;margin:0 0 30px}.actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero .outline{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);color:#fff}
+    .hero-card{padding:28px;border:1px solid rgba(255,255,255,.15);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));box-shadow:0 24px 70px rgba(0,0,0,.15)}
+    .orb{width:72px;height:72px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,#0d84ff,#24d7e4);font-size:31px;margin-bottom:22px;box-shadow:0 10px 35px rgba(36,215,228,.2)}
+    .hero-card h3{font-size:22px;margin:0 0 10px}.hero-card p{font-size:15px;margin:0;color:#c3d1e7}
+    .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.mini{padding:14px;background:rgba(2,13,33,.24);border-radius:14px}.mini strong{display:block;font-size:17px}.mini span{font-size:12px;color:#afc2dd}
+    section{padding:86px 0}.section-head{max-width:680px;margin-bottom:36px}.kicker{color:var(--blue);font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:1.7px}
+    h2{font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-1.5px;margin:10px 0 14px;color:var(--navy)}.section-head p{color:var(--muted);font-size:17px;margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.about-copy p{color:var(--muted);font-size:16px;margin-top:0}
+    .principles{display:grid;grid-template-columns:1fr 1fr;gap:14px}.principle{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.icon{width:42px;height:42px;display:grid;place-items:center;background:#eaf6ff;border-radius:13px;font-size:20px;margin-bottom:14px}.principle h3{font-size:16px;margin:0 0 6px}.principle p{font-size:13px;color:var(--muted);margin:0}
+    .soft{background:var(--paper)}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}.benefit .icon{background:linear-gradient(135deg,#eaf4ff,#e5fcfc)}.benefit h3{margin:0 0 8px;font-size:18px}.benefit p{margin:0;color:var(--muted);font-size:14px}
+    .job-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:30px;margin-bottom:28px}.job-title{font-size:27px;font-weight:850;color:var(--navy);letter-spacing:-.7px}.job-subtitle{color:var(--muted);margin-top:4px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.chip{background:#eaf6ff;color:#0867c5;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:750}
+    .salary{background:var(--navy);color:#fff;border-radius:20px;padding:22px 25px;min-width:235px}.salary small{color:#aebed5;display:block;font-weight:650}.salary strong{font-size:30px;letter-spacing:-1px}.salary span{font-size:12px;color:#b9c9df;display:block}
+    .job-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.job-box{padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff}.job-box h3{display:flex;align-items:center;gap:10px;font-size:17px;margin:0 0 14px}.job-box h3 span{width:30px;height:30px;border-radius:9px;background:#eaf6ff;display:grid;place-items:center;font-size:15px}.job-box ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.job-box li{position:relative;padding-left:22px;color:#4f5e75;font-size:14px}.job-box li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan))}
+    .schedule{margin-top:16px;background:#f1f8ff;border:1px solid #d9ecff;padding:22px;border-radius:18px}.schedule h3{margin:0 0 8px;font-size:16px}.schedule p{margin:0;color:#52637b;font-size:14px}.schedule b{color:var(--navy)}
+      footer{padding:28px 0;background:#05142d;color:#9aabc4;font-size:13px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:18px}.footer-brand img{width:32px;height:32px;border-radius:50%}
+    @media(max-width:800px){.links{gap:14px}.links a:not(.btn){display:none}.hero{padding:68px 0}.hero-grid,.about-grid{grid-template-columns:1fr;gap:30px}.hero-card{max-width:500px}.benefits{grid-template-columns:1fr 1fr}.job-intro{flex-direction:column}.salary{width:100%}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}.nav{height:68px}.brand{font-size:21px}.brand img{width:40px;height:40px}.links .btn{padding:10px 12px;font-size:12px}.hero{padding:56px 0}.hero-grid{gap:28px}h1{letter-spacing:-1.8px}.hero p{font-size:16px}.actions .btn{width:100%}section{padding:64px 0}.principles,.benefits,.job-grid{grid-template-columns:1fr}.job-title{font-size:24px}.footer-row{align-items:flex-start;flex-direction:column}.salary strong{font-size:27px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Subris — на главную"><img src="assets/subris-logo.jpg" alt="Логотип Subris">SUBRIS</a>
+    <nav class="links" aria-label="Основная навигация">
+      <a href="#about">О компании</a><a href="#advantages">Преимущества</a><a href="#vacancy">Вакансия</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Subris · команда поддержки</div>
+        <h1>Помогаем цифровым продуктам <span class="gradient">работать лучше.</span></h1>
+        <p>Поддерживаем пользователей, решаем технические вопросы и делаем цифровые сервисы удобнее. Присоединяйтесь к команде Subris.</p>
+        <div class="actions"><a class="btn" href="#vacancy">Смотреть вакансию <span aria-hidden="true">→</span></a><a class="btn outline" href="#about">Узнать о нас</a></div>
+      </div>
+      <div class="hero-card">
+        <div class="orb" aria-hidden="true">✳</div>
+        <h3>Работа с людьми. Без звонков.</h3>
+        <p>Письменная поддержка в чатах и системах обращений — с понятными инструкциями и обучением на старте.</p>
+        <div class="mini-stats"><div class="mini"><strong>Без звонков</strong><span>Только чаты и сообщения</span></div><div class="mini"><strong>С обучением</strong><span>Можно без опыта</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">О компании</div><h2>Технологии работают лучше, когда рядом есть люди.</h2><p>Subris — современная сервисная компания, которая помогает бизнесу поддерживать качество цифровых продуктов и онлайн-сервисов.</p></div>
+      <div class="about-grid">
+        <div class="about-copy"><p>Мы помогаем компаниям качественно обслуживать пользователей, оперативно обрабатывать обращения и решать возникающие технические вопросы.</p><p>Наша команда работает преимущественно в письменном формате: чаты, сообщения и внутренние системы. Мы ценим внимательность, ответственность и умение спокойно находить решения.</p><p>Сейчас мы расширяем команду и приглашаем специалистов, которые хотят развиваться в технической поддержке.</p></div>
+        <div class="principles">
+          <article class="principle"><div class="icon">✦</div><h3>Внимание к деталям</h3><p>Разбираемся в вопросах и аккуратно фиксируем информацию.</p></article>
+          <article class="principle"><div class="icon">↗</div><h3>Развитие</h3><p>Обучаем на старте и помогаем осваивать рабочие процессы.</p></article>
+          <article class="principle"><div class="icon">◎</div><h3>Понятные процессы</h3><p>Работа по инструкциям и взаимодействие с командой.</p></article>
+          <article class="principle"><div class="icon">⌂</div><h3>Комфортный офис</h3><p>Рабочее место предоставляется компанией.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="advantages">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Почему Subris</div><h2>Условия, в которых можно уверенно стартовать.</h2><p>Мы стремимся сделать рабочий процесс понятным, а адаптацию — комфортной.</p></div>
+      <div class="benefits">
+        <article class="benefit"><div class="icon">💬</div><h3>Только письменная поддержка</h3><p>Чаты и сообщения — без телефонных звонков и продаж.</p></article>
+        <article class="benefit"><div class="icon">🎓</div><h3>Обучение на старте</h3><p>Помогаем освоить инструкции, инструменты и стандартные процессы.</p></article>
+        <article class="benefit"><div class="icon">🏢</div><h3>Работа в офисе</h3><p>Современное рабочее пространство и предоставленное рабочее место.</p></article>
+        <article class="benefit"><div class="icon">📅</div><h3>Варианты графика</h3><p>Полная занятость или подработка, разные варианты смен.</p></article>
+        <article class="benefit"><div class="icon">💳</div><h3>Регулярные выплаты</h3><p>Выплаты два раза в месяц; на начальном этапе возможен ежедневный расчёт.</p></article>
+        <article class="benefit"><div class="icon">🌱</div><h3>Можно без опыта</h3><p>Важнее грамотная письменная речь, внимательность и желание учиться.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="vacancy">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Открытая позиция</div><h2>Присоединяйтесь к нашей команде.</h2><p>Ищем внимательного специалиста, который поможет пользователям получать быстрые и понятные ответы.</p></div>
+      <div class="job-intro">
+        <div><div class="job-title">Менеджер технической поддержки</div><div class="job-subtitle">Офис · чаты и сообщения · полная занятость или подработка</div><div class="chips"><span class="chip">Без звонков</span><span class="chip">Без продаж</span><span class="chip">Обучение</span><span class="chip">Можно без опыта</span></div></div>
+        <div class="salary"><small>Полная занятость — от</small><strong>75 000 ₽</strong><span>оклад — 55 000 ₽</span><hr style="border:0;border-top:1px solid rgba(255,255,255,.16);margin:15px 0"><small>Подработка — от</small><strong>55 000 ₽</strong><span>оклад — 35 000 ₽</span></div>
+      </div>
+      <div class="job-grid">
+        <article class="job-box"><h3><span>✓</span>Обязанности</h3><ul><li>Консультировать пользователей в чатах.</li><li>Решать стандартные технические вопросы по инструкциям.</li><li>Обрабатывать обращения и фиксировать информацию в системе.</li><li>Передавать сложные вопросы профильным специалистам.</li></ul></article>
+        <article class="job-box"><h3><span>◎</span>Требования</h3><ul><li>Грамотная письменная речь и уверенное пользование ПК.</li><li>Внимательность, ответственность и усидчивость.</li><li>Опыт в поддержке будет преимуществом.</li><li>Рассматриваем кандидатов без опыта — обучаем.</li></ul></article>
+        <article class="job-box"><h3><span>＋</span>Условия</h3><ul><li>Современный офис, рабочее место предоставляется.</li><li>Обучение на старте.</li><li>Выплаты два раза в месяц.</li><li>На начальном этапе возможен ежедневный расчёт.</li></ul></article>
+        <article class="job-box"><h3><span>◷</span>График и смены</h3><ul><li>Полный день: 08:00–18:00 или 13:00–23:00.</li><li>Неполный день: 08:00–13:00, 13:00–18:00 или 18:00–23:00.</li><li>Смены: 1/1, 2/2, 3/3, 4/3, 5/2.</li><li>Возможен индивидуальный график.</li></ul></article>
+      </div>
+      <div class="schedule"><h3>Кому подойдёт эта работа?</h3><p>Тем, кто любит разбираться в задачах, умеет ясно писать, спокойно общается с пользователями и хочет освоить профессию в поддержке.</p></div>
+    </div>
+  </section>
+
+</main>
+<footer><div class="wrap footer-row"><div class="footer-brand"><img src="assets/subris-logo.jpg" alt="">SUBRIS</div><div>Техническая поддержка цифровых продуктов и онлайн-сервисов.</div><div>© <span id="year"></span> Subris</div></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
